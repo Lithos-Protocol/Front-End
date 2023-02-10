@@ -168,31 +168,20 @@ async function submit() {
 
 <template>
   <div class="grid grid-cols-1 gap-6">
-    <h3 class="font-semibold text-xl">New loan request</h3>
+    <h3 class="font-semibold text-xl">New Mining Offering</h3>
     <div>
       <div class="form-control">
         <label class="label">
           <span class="label-text big">Amount</span>
         </label>
         <div class="input-group">
-          <cleave-input
-            v-model="state.loan.amount"
-            :readonly="loading"
-            :options="{
-              numeral: true,
-              numeralPositiveOnly: true,
-              numeralDecimalScale: state.loan.asset.metadata.decimals || 0
-            }"
-            placeholder="0.00"
-            class="input input-bordered w-full input-lg"
-            @blur="$v.loan.$touch()"
-          />
+          <cleave-input v-model="state.loan.amount" :readonly="loading" :options="{
+            numeral: true,
+            numeralPositiveOnly: true,
+            numeralDecimalScale: state.loan.asset.metadata.decimals || 0
+          }" placeholder="0.00" class="input input-bordered w-full input-lg" @blur="$v.loan.$touch()" />
           <select v-model="state.loan.asset" class="select select-bordered select-lg border-l-0">
-            <option
-              v-for="asset in VERIFIED_ASSETS.slice(0, 2)"
-              :key="asset.tokenId"
-              :value="asset"
-            >
+            <option v-for="asset in VERIFIED_ASSETS.slice(0, 2)" :key="asset.tokenId" :value="asset">
               {{ asset.metadata.name }}
             </option>
           </select>
@@ -205,27 +194,17 @@ async function submit() {
         <div class="form-control">
           <label class="label">
             <span class="label-text">Term</span>
-            <span v-if="blocks > 0n" class="label-text-alt opacity-70"
-              >{{ decimalize(blocks.toString(), { decimals: 0, thousandMark: "," }) }} blocks</span
-            >
+            <span v-if="blocks > 0n" class="label-text-alt opacity-70">{{ decimalize(blocks.toString(), {
+              decimals: 0,
+                thousandMark: ","
+            }) }} blocks</span>
           </label>
           <div class="input-group">
-            <cleave-input
-              v-model="state.term.value"
-              :readonly="loading"
-              :options="{
-                blocks: [5],
-                numericOnly: true
-              }"
-              placeholder="0"
-              class="input input-bordered w-full"
-              @blur="$v.term.$touch()"
-            />
-            <select
-              v-model="state.term.interval"
-              class="select select-bordered border-l-0"
-              @blur="$v.term.$touch()"
-            >
+            <cleave-input v-model="state.term.value" :readonly="loading" :options="{
+              blocks: [5],
+              numericOnly: true
+            }" placeholder="0" class="input input-bordered w-full" @blur="$v.term.$touch()" />
+            <select v-model="state.term.interval" class="select select-bordered border-l-0" @blur="$v.term.$touch()">
               <option value="hours">hours</option>
               <option value="days">days</option>
               <option value="months">months</option>
@@ -237,25 +216,19 @@ async function submit() {
         </div>
         <div class="form-control">
           <label class="label">
-            <span class="label-text">Interest</span>
-            <span v-if="interestAmount.gt(0)" class="label-text-alt opacity-70"
-              >{{ formatBigNumber(interestAmount, state.loan.asset.metadata?.decimals) }}
-              {{ state.loan.asset.metadata.name }}</span
-            >
+            <span class="label-text">Mining Fee</span>
+            <span v-if="interestAmount.gt(0)" class="label-text-alt opacity-70">{{
+              formatBigNumber(interestAmount,
+                state.loan.asset.metadata?.decimals)
+            }}
+              {{ state.loan.asset.metadata.name }}</span>
           </label>
           <div class="input-group">
-            <cleave-input
-              v-model="state.interest"
-              :readonly="loading"
-              :options="{
-                numeral: true,
-                numeralPositiveOnly: true,
-                numeralDecimalScale: 3
-              }"
-              placeholder="0.00"
-              class="input input-bordered w-full"
-              @blur="$v.interest.$touch()"
-            />
+            <cleave-input v-model="state.interest" :readonly="loading" :options="{
+              numeral: true,
+              numeralPositiveOnly: true,
+              numeralDecimalScale: 3
+            }" placeholder="0.00" class="input input-bordered w-full" @blur="$v.interest.$touch()" />
             <span class="!border-l-0">%</span>
           </div>
           <label v-if="$v.interest.$error" class="label !pt-1">
@@ -270,36 +243,24 @@ async function submit() {
         <label class="label">
           <span class="label-text big">Collateral</span>
         </label>
-        <asset-input
-          v-for="asset in state.collateral"
-          :key="asset.tokenId"
-          v-model="asset.amount"
-          :readonly="loading"
-          :asset="asset.info"
-          :disposable="true"
-          class="pb-2"
-          @remove="removeCollateral"
-        />
+        <asset-input v-for="asset in state.collateral" :key="asset.tokenId" v-model="asset.amount" :readonly="loading"
+          :asset="asset.info" :disposable="true" class="pb-2" @remove="removeCollateral" />
       </div>
       <sig-dropdown root-class="w-full" menu-class="w-full">
         <button :disabled="loading" class="btn w-full shadow mt-2">Add collateral</button>
         <template #menu>
           <li v-for="asset in unselectedAssets" :key="asset.tokenId">
             <a :key="asset.tokenId" class="flex flex-row" @click="addCollateral(asset)">
-              <asset-icon
-                custom-class="h-10 w-10"
-                :token-id="asset.tokenId"
-                :type="asset.metadata?.type"
-              />
+              <asset-icon custom-class="h-10 w-10" :token-id="asset.tokenId" :type="asset.metadata?.type" />
               <span class="flex-grow">{{
                 shortenString(asset.metadata?.name || asset.tokenId, 20)
               }}</span>
               <span>
                 {{
-                  decimalize(asset.amount, {
-                    decimals: asset.metadata?.decimals || 0,
-                    thousandMark: ","
-                  })
+  decimalize(asset.amount, {
+  decimals: asset.metadata?.decimals || 0,
+    thousandMark: ","
+})
                 }}
               </span>
             </a>

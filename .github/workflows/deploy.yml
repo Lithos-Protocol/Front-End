@@ -29,4 +29,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
-          cname: sigmafi.app # if wanna deploy to custom domain
+          cname: LITHOS.app # if wanna deploy to custom domain

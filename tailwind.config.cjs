@@ -5,7 +5,7 @@ const darkTheme = themes["[data-theme=dark]"];
 
 const themeCustomizations = {
   "--btn-focus-scale": "0.98",
-  primary: lightTheme.secondary,
+  primary: lightTheme.primary,
   secondary: lightTheme.primary
 };
 

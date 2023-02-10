@@ -24,50 +24,19 @@ function openKYAModal() {
 <template>
   <footer class="footer p-10 bg-base-300 bg-opacity-50 z-30 text-base-content">
     <div>
-      <img src="/nautilus.svg" width="50" height="50" />
-      <p>Nautilus Team</p>
-      <p class="opacity-70">Ad augusta per angusta</p>
+      <img src="/Lithos_MARK3.svg" width="200" height="200" class="mb-16" />
     </div>
     <div>
       <span class="footer-title">Open Source</span>
-      <a
-        href="https://github.com/K-Singh/Sigma-Finance"
-        class="link link-hover"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Contracts</a
-      >
-      <a
-        href="https://github.com/capt-nemo429/sigmafi-ui"
-        class="link link-hover"
-        target="_blank"
-        rel="noopener noreferrer"
-        >User Interface</a
-      >
-      <a
-        href="https://github.com/capt-nemo429/sigmafi-ui/blob/main/src/offchain/plugins.ts"
-        class="link link-hover"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Off-chain Plugins</a
-      >
+      <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"
+        rel="noopener noreferrer">GitHub</a>
     </div>
     <div>
       <span class="footer-title">Social</span>
-      <a
-        class="link link-hover"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://twitter.com/nautiluswallet"
-        >Twitter</a
-      >
-      <a
-        href="https://github.com/capt-nemo429"
-        class="link link-hover"
-        target="_blank"
-        rel="noopener noreferrer"
-        >GitHub</a
-      >
+      <a class="link link-hover" target="_blank" rel="noopener noreferrer"
+        href="https://twitter.com/LITHOSProtocol">Twitter</a>
+      <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"
+        rel="noopener noreferrer">GitHub</a>
     </div>
     <div>
       <span class="footer-title">KYA</span>

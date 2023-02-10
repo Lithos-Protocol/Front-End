@@ -22,18 +22,17 @@ const ergBalance = computed(() => {
 
 <template>
   <div
-    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-50 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm"
-  >
+    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-50 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm">
     <div class="navbar w-full px-4 flex">
       <div class="flex-1 gap-2">
-        <router-link to="/" class="btn btn-ghost normal-case text-xl gap-2"
-          ><div>Sigma<span class="font-normal">Fi</span></div>
-          <span v-if="isTestnet" class="badge badge-outline font-normal">testnet</span
-          ><span class="badge badge-outline font-normal">beta</span></router-link
-        >
+        <router-link to="/" class="btn btn-ghost normal-case text-xl gap-2">
+          <div>LITHOS Protocol</div>
+          <span v-if="isTestnet" class="badge badge-outline font-normal">testnet</span><span
+            class="badge badge-outline font-normal">DEMO</span>
+        </router-link>
         <ul class="menu menu-horizontal px-1 gap-2">
           <li>
-            <router-link to="/" active-class="active-item">Market</router-link>
+            <router-link to="/" active-class="active-item">Mining Offerings</router-link>
           </li>
           <li v-if="wallet.connected">
             <router-link to="/dashboard" active-class="active-item">Dashboard</router-link>
@@ -48,46 +47,33 @@ const ergBalance = computed(() => {
 
         <ul class="menu menu-horizontal px-1 gap-2">
           <li class="hidden md:block">
-            <a
-              class="btn btn-ghost gap-1 bg-base-100 hover:bg-base-100 hover:bg-opacity-50 bg-opacity-50 no-animation h-2"
-              :class="{ loading: wallet.loading }"
-            >
+            <a class="btn btn-ghost gap-1 bg-base-100 hover:bg-base-100 hover:bg-opacity-50 bg-opacity-50 no-animation h-2"
+              :class="{ loading: wallet.loading }">
               <template v-if="!wallet.connected">Connect Wallet</template>
               <template v-else>
                 <span class="font-normal">{{ ergBalance }} ERG</span>
                 <span class="normal-case py-1 px-2 font-normal opacity-70">
                   {{ shortenString(wallet.changeAddress, 14) }}
                 </span>
-                <img
-                  v-if="wallet.connectedWallet === 'nautilus'"
-                  src="/nautilus.svg"
-                  width="24"
-                  height="24"
-                />
+                <img v-if="wallet.connectedWallet === 'nautilus'" src="/nautilus.svg" width="24" height="24" />
                 <img v-else src="@/assets/safew.png" width="24" height="24" />
               </template>
             </a>
             <ul class="p-2 bg-base-100 shadow-md w-full">
               <template v-if="!wallet.connected">
                 <li>
-                  <a
-                    class="opacity-50"
-                    :class="{ 'opacity-100': wallet.wallets.nautilus }"
-                    @click="wallet.connect('nautilus')"
-                  >
+                  <a class="opacity-50" :class="{ 'opacity-100': wallet.wallets.nautilus }"
+                    @click="wallet.connect('nautilus')">
                     <div class="flex-grow text-left">Nautilus</div>
                     <img src="/nautilus.svg" class="w-5 h-5" />
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="opacity-50"
-                    :class="{ 'opacity-100': wallet.wallets.safew }"
-                    @click="wallet.connect('safew')"
-                  >
+                  <a class="opacity-50" :class="{ 'opacity-100': wallet.wallets.safew }"
+                    @click="wallet.connect('safew')">
                     <div class="flex-grow text-left">SAFEW</div>
-                    <img src="@/assets/safew.png" class="w-5 h-5"
-                  /></a>
+                    <img src="@/assets/safew.png" class="w-5 h-5" />
+                  </a>
                 </li>
               </template>
               <li v-else><a @click="wallet.disconnect()">Disconnect</a></li>
@@ -105,10 +91,6 @@ const ergBalance = computed(() => {
   </div>
 </template>
 
-<style scoped>
-.active-item {
-  @apply bg-base-100 bg-opacity-50;
-}
 
 .menu a {
   @apply active:bg-base-100 active:text-base-content;

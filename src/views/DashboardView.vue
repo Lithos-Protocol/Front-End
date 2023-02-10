@@ -149,62 +149,27 @@ async function loadData(
 <template>
   <div class="grid grid-cols-1 gap-8">
     <div class="tabs tabs-boxed max-w-max">
-      <a
-        class="tab text-md"
-        :class="{ 'tab-active': selectedTab === 'orders' }"
-        @click="selectedTab = 'orders'"
-        >Open orders</a
-      >
-      <a
-        class="tab text-md"
-        :class="{ 'tab-active': selectedTab === 'loans' }"
-        @click="selectedTab = 'loans'"
-        >Loans</a
-      >
-      <a
-        class="tab text-md"
-        :class="{ 'tab-active': selectedTab === 'debits' }"
-        @click="selectedTab = 'debits'"
-        >Debits</a
-      >
+      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'orders' }" @click="selectedTab = 'orders'">Open
+        orders</a>
+      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'loans' }" @click="selectedTab = 'loans'">Loans</a>
+      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'debits' }"
+        @click="selectedTab = 'debits'">Debits</a>
     </div>
 
-    <div
-      class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-    >
+    <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <template v-if="selectedTab === 'orders'">
-        <bond-order-card
-          v-if="loading.boxes"
-          :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata"
-        />
-        <bond-order-card
-          v-for="box in boxes"
-          v-else
-          :key="box.boxId"
-          :box="box"
-          :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata"
-        />
+        <bond-order-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
+        <bond-order-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
+          :loading-metadata="loading.metadata" />
       </template>
       <template v-else>
-        <bond-card
-          v-if="loading.boxes"
-          :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata"
-        />
-        <bond-card
-          v-for="box in boxes"
-          v-else
-          :key="box.boxId"
-          :box="box"
-          :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata"
-        />
+        <bond-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
+        <bond-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
+          :loading-metadata="loading.metadata" />
       </template>
     </div>
-    <div v-if="!loading.boxes && isEmpty(boxes)" class="text-7xl text-center w-full">
-      <div class="opacity-90">Nothing to show yet.</div>
+    <div v-if="!loading.boxes && isEmpty(boxes)" class="text-5xl text-center w-full">
+      <div class="opacity-90">Waiting for tranaction to be confirmed...</div>
     </div>
   </div>
 </template>
