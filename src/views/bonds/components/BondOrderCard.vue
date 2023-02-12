@@ -70,7 +70,7 @@ async function cancelOrder() {
   <div class="stats flex flex-col bg-base-100 stats-vertical shadow" :class="{ skeleton: loadingBox }">
     <div class="stat">
       <div class="stat-title skeleton-placeholder">
-        {{ order?.term.value }} {{ order?.term.interval }} blocks
+        {{ order?.term.value }} {{ order?.term.interval }} Blocks
       </div>
       <div class="stat-value text-success flex items-center gap-1">
         <div class="flex-grow">
@@ -121,7 +121,7 @@ async function cancelOrder() {
     <div class="flex-grow opacity-0"></div>
 
     <div class="stat">
-      <div class="stat-title">Interest</div>
+      <div class="stat-title">Fees</div>
       <div class="flex gap-2">
         <div class="stat-value skeleton-placeholder flex-grow">{{ order?.interest.percent }}%</div>
         <asset-row hide-price mode="amount-then-ticker" :asset="order?.interest" name-class="text-xs" class="text-right"
@@ -130,10 +130,10 @@ async function cancelOrder() {
       <div class="stat-desc skeleton-placeholder">
         {{ formatBigNumber(order?.interest.apr, 3) }}% APR
       </div>
-      <div class="stat-actions text-center flex gap-2">
-        <button v-if="order?.cancellable" class="btn btn-sm btn-ghost" :class="{ loading: cancelling }"
+      <div class="stat-actions text-center">
+        <button v-if="order?.cancellable" class="btn btn-sm btn-center btn-primary" :class="{ loading: cancelling }"
           :disabled="!wallet.connected || loadingBox" @click="cancelOrder()">
-          Cancel
+          Cancel Offering
         </button>
         <!-- <button
           class="btn btn-sm btn-primary flex-grow"

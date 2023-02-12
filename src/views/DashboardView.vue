@@ -150,10 +150,11 @@ async function loadData(
   <div class="grid grid-cols-1 gap-8">
     <div class="tabs tabs-boxed max-w-max">
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'orders' }" @click="selectedTab = 'orders'">Open
-        orders</a>
-      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'loans' }" @click="selectedTab = 'loans'">Loans</a>
+        Mining Offerings</a>
+      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'loans' }" @click="selectedTab = 'loans'">Active
+        Offerings</a>
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'debits' }"
-        @click="selectedTab = 'debits'">Debits</a>
+        @click="selectedTab = 'debits'">Completed Offerings</a>
     </div>
 
     <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
@@ -169,7 +170,7 @@ async function loadData(
       </template>
     </div>
     <div v-if="!loading.boxes && isEmpty(boxes)" class="text-5xl text-center w-full">
-      <div class="opacity-90">Waiting for tranaction to be confirmed...</div>
+      <div class="opacity-90">No Active Offerings...</div>
     </div>
   </div>
 </template>

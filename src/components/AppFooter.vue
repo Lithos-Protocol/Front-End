@@ -23,9 +23,9 @@ function openKYAModal() {
 
 <template>
   <footer class="footer p-10 bg-base-300 bg-opacity-50 z-30 text-base-content">
-    <div>
-      <img src="/Lithos_MARK3.svg" width="200" height="200" class="mb-16" />
-    </div>
+
+    <img src="/Lithos_MARK3.svg" width="150" height="150" />
+
     <div>
       <span class="footer-title">Open Source</span>
       <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"

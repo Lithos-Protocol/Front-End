@@ -59,7 +59,7 @@ onMounted(async () => {
       </template>
     </div>
     <div v-if="!loading.boxes && isEmpty(boxes)" class="text-7xl text-center w-full pb-20">
-      <div class="py-20 opacity-90">No open orders for now.</div>
+      <div class="py-20 opacity-90">Nothing to dispay...</div>
     </div>
   </div>
 </template>

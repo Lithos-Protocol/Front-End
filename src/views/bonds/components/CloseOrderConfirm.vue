@@ -57,12 +57,12 @@ async function closeOrder() {
 
 <template>
   <div class="grid grid-cols-1 gap-8">
-    <h3 class="font-semibold text-xl">Lend confirmation</h3>
+    <h3 class="font-semibold text-xl">Offering confirmation</h3>
 
     <div class="stats stats-vertical bg-base-100">
       <div class="stat">
         <div class="flex flex-row gap-1">
-          <div class="stat-title">Loan</div>
+          <div class="stat-title">Mining Offering</div>
           <div class="text-xl font-semibold flex items-center w-full text-right gap-2">
             <asset-row mode="amount-then-ticker" :max-name-len="15" :asset="order?.loan"
               root-class="items-baseline w-full justify-end" name-class="text-sm" class="w-full" />
@@ -88,7 +88,7 @@ async function closeOrder() {
       </div>
       <div class="stat">
         <div class="flex flex-row gap-1">
-          <div class="stat-title">Term</div>
+          <div class="stat-title"># of Blocks</div>
           <div class="text-lg text-right w-full">
             {{ order?.term.value }} {{ order?.term.interval }}
           </div>
@@ -97,7 +97,7 @@ async function closeOrder() {
 
       <div class="stat">
         <div class="flex flex-row gap-1">
-          <div class="stat-title">Interest</div>
+          <div class="stat-title">Fee</div>
           <div class="text-lg text-right w-full">
             <asset-row :asset="order?.interest" mode="amount-then-ticker" name-class="text-sm"
               root-class="items-baseline w-full justify-end" />
@@ -108,7 +108,7 @@ async function closeOrder() {
 
       <div class="stat">
         <div class="flex flex-row gap-1">
-          <div class="stat-title">Borrower</div>
+          <div class="stat-title">Miner</div>
           <div class="text-lg text-right w-full">
             <a :href="addressUrlFor(order?.borrower)" class="link link-hover text-sm" target="_blank"
               rel="noopener noreferrer">

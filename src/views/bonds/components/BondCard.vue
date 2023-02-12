@@ -142,7 +142,7 @@ async function repay() {
     <div class="flex-grow opacity-0"></div>
 
     <div v-if="bond?.type === 'debit'" class="stat">
-      <div class="stat-title skeleton-placeholder">Lender</div>
+      <div class="stat-title skeleton-placeholder">Collateral Provider</div>
       <a
         :href="addressUrlFor(bond?.lender)"
         class="link link-hover text-sm skeleton-placeholder"
@@ -154,7 +154,7 @@ async function repay() {
       </a>
     </div>
     <div v-else class="stat">
-      <div class="stat-title skeleton-placeholder">Borrower</div>
+      <div class="stat-title skeleton-placeholder">Miner</div>
       <a
         :href="addressUrlFor(bond?.borrower)"
         class="link link-hover text-sm skeleton-placeholder"
@@ -168,7 +168,7 @@ async function repay() {
     <div class="stat">
       <div class="flex">
         <div class="flex-grow">
-          <div class="stat-title skeleton-placeholder">Term</div>
+          <div class="stat-title skeleton-placeholder"># of Blocks</div>
           <div class="stat-value skeleton-placeholder flex-grow">
             {{ bond?.term.value }} {{ bond?.term.interval }}
           </div>

@@ -193,22 +193,25 @@ async function submit() {
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div class="form-control">
           <label class="label">
-            <span class="label-text">Term</span>
-            <span v-if="blocks > 0n" class="label-text-alt opacity-70">{{ decimalize(blocks.toString(), {
-              decimals: 0,
-                thousandMark: ","
-            }) }} blocks</span>
+            <span class="label-text"># of Blocks</span>
+            <!-- <span v-if="blocks > 0n" class="label-text-alt opacity-70">{{ decimalize(blocks.toString(), { -->
+            <!-- decimals: 0, -->
+            <!-- thousandMark: "," -->
+            <!-- }) }} blocks</span> -->
           </label>
           <div class="input-group">
             <cleave-input v-model="state.term.value" :readonly="loading" :options="{
               blocks: [5],
               numericOnly: true
             }" placeholder="0" class="input input-bordered w-full" @blur="$v.term.$touch()" />
-            <select v-model="state.term.interval" class="select select-bordered border-l-0" @blur="$v.term.$touch()">
-              <option value="hours">hours</option>
-              <option value="days">days</option>
-              <option value="months">months</option>
-            </select>
+            <!-- <select v-model="state.term.interval" class="select select-bordered border-l-0" @blur="$v.term.$touch()"> -->
+            <!-- <option value="hours">Blocks</option> -->
+            <!-- <option value="days">Amount</option> -->
+            <!-- <option value="months">months</option> -->
+            <!-- </select> -->
+
+            <span class="label-text big">Blocks</span>
+
           </div>
           <label v-if="$v.term.$error" class="label !pt-1">
             <span class="label-text-alt text-error"> {{ $v.term.$errors[0].$message }}</span>

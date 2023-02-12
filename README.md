@@ -1,3 +1,3 @@
-# SigmaFi UI
+# LITHOS Protocol UI
 
-UI implementation for SigmaFinance contracts.
+UI implementation for LITHOS Protocol.

@@ -24,8 +24,10 @@ const ergBalance = computed(() => {
   <div
     class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-50 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm">
     <div class="navbar w-full px-4 flex">
+      <img src="/Lithos_NoText.svg" width="40" height="40" class="animate-bounce" />
       <div class="flex-1 gap-2">
         <router-link to="/" class="btn btn-ghost normal-case text-xl gap-2">
+
           <div>LITHOS Protocol</div>
           <span v-if="isTestnet" class="badge badge-outline font-normal">testnet</span><span
             class="badge badge-outline font-normal">DEMO</span>
@@ -91,8 +93,3 @@ const ergBalance = computed(() => {
   </div>
 </template>
 
-
-.menu a {
-  @apply active:bg-base-100 active:text-base-content;
-}
-</style>
