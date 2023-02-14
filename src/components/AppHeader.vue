@@ -22,7 +22,7 @@ const ergBalance = computed(() => {
 
 <template>
   <div
-    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-50 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm">
+    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-[#37415176] transition-all duration-100 text-base-content shadow-sm">
     <div class="navbar w-full px-4 flex">
       <img src="/Lithos_NoText.svg" width="40" height="40" class="animate-bounce" />
       <div class="flex-1 gap-2">

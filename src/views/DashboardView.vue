@@ -10,7 +10,10 @@ import { graphQLService } from "@/services/graphqlService";
 import { useChainStore } from "@/stories";
 import { useWalletStore } from "@/stories/walletStore";
 import BondOrderCard from "@/views/bonds/components/BondOrderCard.vue";
+import NewLoanRequestView from "@/views/bonds/NewLoanRequestView.vue";
+import { useProgrammatic } from "@oruga-ui/oruga-next";
 
+const { oruga } = useProgrammatic();
 const chain = useChainStore();
 const wallet = useWalletStore();
 
@@ -19,6 +22,13 @@ type Tab = "orders" | "loans" | "debits";
 const selectedTab = ref<Tab>("orders");
 const boxes = ref<Box<string>[]>([]);
 const loading = reactive({ boxes: true, metadata: true });
+
+function openNewLoanModal() {
+  oruga.modal.open({
+    component: NewLoanRequestView,
+    width: "30rem"
+  });
+}
 
 let publicKeys: string[] = [];
 
@@ -147,6 +157,12 @@ async function loadData(
 </script>
 
 <template>
+  <div class="flex flex-row justify-end">
+    <button class="btn btn-primary shadow text-flex-col" :disabled="!wallet.connected || wallet.loading"
+      @click="openNewLoanModal()">
+      Create Mining Offering
+    </button>
+  </div>
   <div class="grid grid-cols-1 gap-8">
     <div class="tabs tabs-boxed max-w-max">
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'orders' }" @click="selectedTab = 'orders'">Open
