@@ -15,8 +15,9 @@ const chain = useChainStore();
 
   <div class="min-h-screen flex flex-col justify-between">
 
-
+   <div classs="fixed">
     <app-header />
+  </div>
     <div class="app">
       <!-- Sidebar -->
       <Sidebar />
@@ -75,7 +76,7 @@ button {
 
 #sidebar {
 
-  position: fixed;
+  position: static;
 }
 
 .app {

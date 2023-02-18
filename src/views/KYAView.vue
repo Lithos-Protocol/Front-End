@@ -1,4 +1,5 @@
-<script setup lang="ts">
+KYA Modal  can add back later if needed 
+<!-- <script setup lang="ts">
 import { useUIStore } from "@/stories";
 
 const store = useUIStore();
@@ -66,4 +67,4 @@ function accept() {
     </div>
     <button class="btn w-full" @click="accept()">I understand and accept the KYA</button>
   </div>
-</template>
+</template> -->

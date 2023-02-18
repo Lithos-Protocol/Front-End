@@ -38,7 +38,7 @@
 }
 
 .modal-box {
-  @apply z-30 max-h-[95vh] !bg-base-200;
+  @apply z-30 max-h-[95vh] !bg-[#37415176];
 }
 
 .modal-box .divider {

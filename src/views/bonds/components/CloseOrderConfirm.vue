@@ -59,7 +59,7 @@ async function closeOrder() {
   <div class="grid grid-cols-1 gap-8">
     <h3 class="font-semibold text-xl">Offering confirmation</h3>
 
-    <div class="stats stats-vertical bg-base-100">
+    <div class="stats stats-vertical bg-[#37415176]">
       <div class="stat">
         <div class="flex flex-row gap-1">
           <div class="stat-title">Mining Offering</div>

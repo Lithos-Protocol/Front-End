@@ -22,7 +22,7 @@ const ergBalance = computed(() => {
 
 <template>
   <div
-    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-[#37415176] transition-all duration-100 text-base-content shadow-sm">
+    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-base-300 bg-[#37415176] transition-all duration-100 text-white shadow-sm">
     <div class="navbar w-full px-4 flex">
       <img src="/Lithos_NoText.svg" width="40" height="40" class="animate-bounce" />
       <div class="flex-1 gap-2">
@@ -40,13 +40,14 @@ const ergBalance = computed(() => {
             <router-link to="/dashboard" active-class="active-item">Dashboard</router-link>
           </li>
         </ul>
+        <div v-if="chain.tvl?.gt(0)">TVL: ${{ formatBigNumber(chain.tvl, 2) }}</div>
       </div>
 
-      <div class="flex-1r"></div>
+    
 
-      <div class="flex-2 gap-2">
-        <div v-if="chain.tvl?.gt(0)">TVL: ${{ formatBigNumber(chain.tvl, 2) }}</div>
-
+   
+     
+        <div class=" gap-2">
         <ul class="menu menu-horizontal px-1 gap-2">
           <li class="hidden md:block">
             <a class="btn btn-ghost gap-1 bg-base-100 hover:bg-base-100 hover:bg-opacity-50 bg-opacity-50 no-animation h-2"

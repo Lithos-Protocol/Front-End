@@ -2,27 +2,27 @@
 import { useProgrammatic } from "@oruga-ui/oruga-next";
 import { onMounted } from "vue";
 import { useUIStore } from "@/stories";
-import KYAView from "@/views/KYAView.vue";
+// import KYAView from "@/views/KYAView.vue";
 const { oruga } = useProgrammatic();
 
 const store = useUIStore();
 
-onMounted(() => {
-  if (!store.isKYAAccepted.value) {
-    openKYAModal();
-  }
-});
+// onMounted(() => {
+//   if (!store.isKYAAccepted.value) {
+//     openKYAModal();
+//   }
+// });
 
-function openKYAModal() {
-  oruga.modal.open({
-    component: KYAView,
-    canCancel: store.isKYAAccepted.value
-  });
-}
+// function openKYAModal() {
+//   oruga.modal.open({
+//     component: KYAView,
+//     canCancel: store.isKYAAccepted.value
+//   });
+// }
 </script>
 
 <template>
-  <footer class="footer p-10 bg-base-300 bg-opacity-50 z-30 text-base-content">
+  <footer class="footer p-10 bg-base-300 bg-[#37415176] z-30 text-base-content">
 
     <img src="/Lithos_MARK3.svg" width="150" height="150" />
 
@@ -38,9 +38,9 @@ function openKYAModal() {
       <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"
         rel="noopener noreferrer">GitHub</a>
     </div>
-    <div>
+    <!-- <div>
       <span class="footer-title">KYA</span>
       <a class="link link-hover" @click="openKYAModal">Know Your Assumptions</a>
-    </div>
+    </div> -->
   </footer>
 </template>

@@ -67,7 +67,7 @@ async function cancelOrder() {
 </script>
 
 <template>
-  <div class="stats flex flex-col bg-base-100 stats-vertical shadow" :class="{ skeleton: loadingBox }">
+  <div class="stats flex flex-col bg-[#37415176] stats-vertical shadow" :class="{ skeleton: loadingBox }">
     <div class="stat">
       <div class="stat-title skeleton-placeholder">
         {{ order?.term.value }} {{ order?.term.interval }} Blocks

@@ -14,6 +14,8 @@
   "dependencies": {
     "@fleet-sdk/common": "0.1.0-alpha.19",
     "@fleet-sdk/core": "0.1.0-alpha.19",
+    "@jamescoyle/vue-icon": "^0.1.2",
+    "@mdi/js": "^7.1.96",
     "@oruga-ui/oruga-next": "^0.5.10",
     "@urql/core": "^3.1.1",
     "@vuelidate/core": "^2.0.0",

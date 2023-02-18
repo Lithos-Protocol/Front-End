@@ -6,37 +6,50 @@
 
         <div class="menu-toggle-wrap">
             <button class="menu-toggle" @click="ToggleMenu">
-                <span class="material-icons">keyboard_double_arrow_right</span>
+                <span class="material-icons">
+                    <ChevronsRightIcon />
+                </span>
             </button>
         </div>
 
         <h3>Menu</h3>
         <div class="menu">
             <router-link to="/" class="button">
-                <span class="material-icons">home</span>
+                <span class="material-icons">
+                    <HomeIcon />
+                </span>
                 <span class="text">Home</span>
             </router-link>
             <router-link to="/dashboard" class="button">
-                <span class="material-icons">space_dashboard</span>
+                <span class="material-icons">
+                    <MonitorIcon />
+                </span>
                 <span class="text">Dashboard</span>
             </router-link>
-            <router-link to="/team" class="button">
-                <span class="material-icons">group</span>
+            <router-link to="/Team" class="button">
+                <span class="material-icons">
+                    <UsersIcon />
+                </span>
                 <span class="text">Team</span>
             </router-link>
-            <router-link to="/contact" class="button">
-                <span class="material-icons">email</span>
-                <span class="text">Contact</span>
+            <router-link to="/github" class="button">
+                <span class="material-icons">
+                    <GithubIcon />
+                </span>
+                <span class="text">GitHub</span>
+            </router-link>
+            <router-link to="/twitter" class="button">
+                <span class="material-icons">
+                <TwitterIcon />
+                </span>
+                <span class="text">Twitter</span>
             </router-link>
         </div>
 
         <div class="flex"></div>
 
         <div class="menu">
-            <router-link to="/settings" class="button">
-                <span class="material-icons">settings</span>
-                <span class="text">Settings</span>
-            </router-link>
+
         </div>
     </aside>
 </template>
@@ -44,6 +57,7 @@
 <script setup>
 import { ref } from 'vue'
 import logoURL from '../../src/Lithos_MARK3.svg'
+import { ChevronsRightIcon, GithubIcon, HomeIcon, MonitorIcon, TwitterIcon, UsersIcon } from '@zhuowenli/vue-feather-icons';
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
@@ -55,7 +69,7 @@ const ToggleMenu = () => {
 
 <style lang="scss" scoped>
 :root {
-    --sidebar-width: 300px;
+    --sidebar-width: 400px;
 }
 
 aside {
@@ -86,7 +100,7 @@ aside {
 
     .menu-toggle-wrap {
         display: flex;
-        justify-content: flex-end;
+        margin-top: 2rem;
         margin-bottom: 1rem;
 
         position: relative;
@@ -144,6 +158,7 @@ aside {
             .text {
                 color: var(--light);
                 transition: 0.2s ease-in-out;
+
             }
 
             &:hover {

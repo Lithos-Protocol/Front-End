@@ -82,7 +82,7 @@ async function repay() {
 
 <template>
   <div
-    class="stats flex flex-col bg-base-100 stats-vertical shadow"
+    class="stats flex flex-col bg-[#37415176] stats-vertical shadow"
     :class="{ skeleton: loadingBox }"
   >
     <div class="stat">
