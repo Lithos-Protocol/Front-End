@@ -157,36 +157,39 @@ async function loadData(
 </script>
 
 <template>
-  <div class="flex flex-row justify-end">
-    <button class="btn btn-primary shadow text-flex-col" :disabled="!wallet.connected || wallet.loading"
+  <div class="grid grid-cols-4 grid-rows-2">
+    <button class="btn bg-[#42446e] h-2 shadow text-white text-flex-col" :disabled="!wallet.connected || wallet.loading"
       @click="openNewLoanModal()">
       Create Mining Offering
     </button>
   </div>
-  <div class="grid grid-cols-1 gap-8">
-    <div class="tabs tabs-boxed max-w-max">
+  <div></div>
+  <div class="grid grid-cols-4 grid-rows-1 gap-2 justify-end text-flex-col">
+    <div class="tabs tabs-boxed max-w-max col-start-2 col-span-4 ">
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'orders' }" @click="selectedTab = 'orders'">Open
         Mining Offerings</a>
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'loans' }" @click="selectedTab = 'loans'">Active
         Offerings</a>
-      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'debits' }"
-        @click="selectedTab = 'debits'">Completed Offerings</a>
+      <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'debits' }" @click="selectedTab = 'debits'">Completed
+        Offerings</a>
     </div>
+  </div>
 
-    <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <template v-if="selectedTab === 'orders'">
-        <bond-order-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
-        <bond-order-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata" />
-      </template>
-      <template v-else>
-        <bond-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
-        <bond-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
-          :loading-metadata="loading.metadata" />
-      </template>
-    </div>
-    <div v-if="!loading.boxes && isEmpty(boxes)" class="text-5xl text-center w-full">
-      <div class="opacity-90">No Active Offerings...</div>
-    </div>
+  <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <template v-if="selectedTab === 'orders'">
+      <bond-order-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
+      <bond-order-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
+        :loading-metadata="loading.metadata" />
+    </template>
+    <template v-else>
+      <bond-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
+      <bond-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
+        :loading-metadata="loading.metadata" />
+    </template>
+  </div>
+
+  <div v-if="!loading.boxes && isEmpty(boxes)" class="text-3xl text-center w-full col-start-1 col-span-3">
+    <div class="opacity-90">No Active Offerings...</div>
+
   </div>
 </template>
