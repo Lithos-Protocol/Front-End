@@ -22,25 +22,26 @@ const store = useUIStore();
 </script>
 
 <template>
-  <footer class="footer p-10 bg-base-300 bg-[#37415176] z-30 text-base-content">
+  <footer class="footer bg-base-300 bg-[#37415176] text-base-content">
 
-    <img src="/Lithos_MARK3.svg" width="150" height="150" />
 
-    <div>
+
+    <!-- <div>
       <span class="footer-title">Open Source</span>
       <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"
         rel="noopener noreferrer">GitHub</a>
-    </div>
-    <div>
       <span class="footer-title">Social</span>
       <a class="link link-hover" target="_blank" rel="noopener noreferrer"
         href="https://twitter.com/LITHOSProtocol">Twitter</a>
       <a href="https://github.com/Lithos-Protocol" class="link link-hover" target="_blank"
         rel="noopener noreferrer">GitHub</a>
-    </div>
+    </div> -->
+   
+
     <!-- <div>
       <span class="footer-title">KYA</span>
       <a class="link link-hover" @click="openKYAModal">Know Your Assumptions</a>
     </div> -->
+    <img src="/Lithos_MARK3.svg" width="100" height="100" />
   </footer>
 </template>

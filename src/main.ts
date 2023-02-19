@@ -4,7 +4,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { router } from "./router";
 import { setSystemTheme } from "./utils";
-
+import Particles from "particles.vue3";
 import "@oruga-ui/oruga-next/dist/oruga.css";
 import "./style.css";
 setSystemTheme();
@@ -21,4 +21,7 @@ const orugaSettings = {
 const pinia = createPinia();
 const app = createApp(App);
 
-app.use(router).use(pinia).use(Config, orugaSettings).use(Modal).use(Notification).mount("#app");
+app.use(router).use(pinia).use(Config, orugaSettings).use(Modal).use(Notification).use(Particles as any).mount("#app");
+
+
+

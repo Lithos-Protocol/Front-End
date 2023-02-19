@@ -210,8 +210,7 @@ async function submit() {
             <!-- <option value="months">months</option> -->
             <!-- </select> -->
 
-            <span class="label-text big">Blocks</span>
-
+        
           </div>
           <label v-if="$v.term.$error" class="label !pt-1">
             <span class="label-text-alt text-error"> {{ $v.term.$errors[0].$message }}</span>

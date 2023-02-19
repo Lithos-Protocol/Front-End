@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Dashboard from "./views/DashboardView.vue";
-import BondsMarketView from "./views/bonds/BondsMarketView.vue";
+import BondsMarketView from "./views/bonds/MinngOfferingView.vue";
 import TeamVue from "./components/Team.vue";
 import Github from "./components/GitHub.vue";
 

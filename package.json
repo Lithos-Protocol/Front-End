@@ -25,7 +25,9 @@
     "cleave.js": "^1.6.0",
     "graphql": "^16.6.0",
     "lodash-es": "^4.17.21",
+    "particles.vue3": "^2.9.3",
     "pinia": "^2.0.28",
+    "tsparticles": "^2.9.3",
     "vue": "^3.2.45",
     "vue-eslint-parser": "^9.1.0",
     "vue-router": "^4.1.6"

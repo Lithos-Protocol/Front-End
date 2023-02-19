@@ -3,7 +3,7 @@ import { Box } from "@fleet-sdk/common";
 import { useProgrammatic } from "@oruga-ui/oruga-next";
 import BigNumber from "bignumber.js";
 import { computed, PropType, ref, toRaw } from "vue";
-import CloseOrderConfirm from "./CloseOrderConfirm.vue";
+import CloseOrderConfirm from "./CloseOfferingConfirm.vue";
 import AssetIcon from "@/components/AssetIcon.vue";
 import AssetRow from "@/components/AssetRow.vue";
 import SigTooltip from "@/components/SigTooltip.vue";
@@ -67,10 +67,10 @@ async function cancelOrder() {
 </script>
 
 <template>
-  <div class="stats flex flex-col bg-[#37415176] stats-vertical shadow" :class="{ skeleton: loadingBox }">
+  <div class="stats flex flex-col bg-[#37415176] text-white stats-vertical shadow" :class="{ skeleton: loadingBox }">
     <div class="stat">
       <div class="stat-title skeleton-placeholder">
-        {{ order?.term.value }} {{ order?.term.interval }} Blocks
+        {{ order?.term.value }} {{ order?.term.interval }} 
       </div>
       <div class="stat-value text-success flex items-center gap-1">
         <div class="flex-grow">

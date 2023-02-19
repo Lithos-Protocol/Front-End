@@ -2,13 +2,13 @@
 import { Box, isEmpty } from "@fleet-sdk/common";
 import { useProgrammatic } from "@oruga-ui/oruga-next";
 import { onMounted, reactive, ref } from "vue";
-import BondOrderCard from "./components/BondOrderCard.vue";
+import BondOrderCard from "./components/MiningOfferingCard.vue";
 import { VERIFIED_ASSETS } from "@/maps";
 import { buildOrderContract } from "@/offchain/plugins";
 import { graphQLService } from "@/services/graphqlService";
 import { useChainStore } from "@/stories";
 import { useWalletStore } from "@/stories/walletStore";
-import NewLoanRequestView from "@/views/bonds/NewLoanRequestView.vue";
+import NewLoanRequestView from "@/views/bonds/NewOfferingView.vue";
 
 const { oruga } = useProgrammatic();
 

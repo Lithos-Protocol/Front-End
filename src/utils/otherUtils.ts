@@ -77,21 +77,21 @@ export function blockToTime(blocks: number) {
     term.value *= -1;
   }
 
-  if (term.value > 59) {
-    term.value = Math.round(term.value / 60);
-    term.interval = pluralize("hour", term.value);
+  if (term.value > 1) {
+    term.value = Math.round(term.value / 1);
+    term.interval = pluralize("Block", term.value);
 
     if (term.value > 23) {
       term.value = Math.round(term.value / 24);
-      term.interval = pluralize("day", term.value);
+      term.interval = pluralize("Block", term.value);
 
       if (term.value > 29) {
         term.value = Math.round(term.value / 30);
-        term.interval = pluralize("month", term.value);
+        term.interval = pluralize("Block", term.value);
       }
     }
   } else {
-    term.interval = pluralize("minute", term.value);
+    term.interval = pluralize("", term.value);
   }
 
   if (negative) {

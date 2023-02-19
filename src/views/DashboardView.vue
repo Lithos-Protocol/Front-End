@@ -3,14 +3,14 @@ import { QueryBoxesArgs } from "@ergo-graphql/types";
 import { Amount, Box, isDefined, isEmpty, some } from "@fleet-sdk/common";
 import { ErgoAddress } from "@fleet-sdk/core";
 import { reactive, ref, watch } from "vue";
-import BondCard from "./bonds/components/BondCard.vue";
+import BondCard from "./bonds/components/MOCard.vue";
 import { VERIFIED_ASSETS } from "@/maps";
 import { buildBondContract, buildOrderContract } from "@/offchain/plugins";
 import { graphQLService } from "@/services/graphqlService";
 import { useChainStore } from "@/stories";
 import { useWalletStore } from "@/stories/walletStore";
-import BondOrderCard from "@/views/bonds/components/BondOrderCard.vue";
-import NewLoanRequestView from "@/views/bonds/NewLoanRequestView.vue";
+import BondOrderCard from "@/views/bonds/components/MiningOfferingCard.vue";
+import NewLoanRequestView from "@/views/bonds/NewOfferingView.vue";
 import { useProgrammatic } from "@oruga-ui/oruga-next";
 
 const { oruga } = useProgrammatic();

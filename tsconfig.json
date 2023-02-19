@@ -33,7 +33,7 @@
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
-, "src/Github.js"  ],
+, "src/Github.js", "src/components/Particles.vue"  ],
   "references": [
     {
       "path": "./tsconfig.node.json"

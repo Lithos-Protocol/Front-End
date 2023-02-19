@@ -4,6 +4,7 @@ import AppFooter from "./components/AppFooter.vue";
 import AppHeader from "./components/AppHeader.vue";
 import Sidebar from "./components/Sidebar.vue";
 import { useChainStore } from "./stories";
+import CustomParticles from "./components/Particles.vue";
 
 const chain = useChainStore();
 </script>
@@ -23,8 +24,8 @@ const chain = useChainStore();
       <Sidebar />
 
 
-      <main class="flex-grow py-8 px-4 md:px-8 lg:px-16">
-
+      <main class="flex-grow py-8 px-4 md:px-8 sm:px-8">
+        <CustomParticles /> 
         <router-view />
       </main>
     </div>
@@ -39,7 +40,7 @@ const chain = useChainStore();
 </template>
 <style lang="scss">
 :root {
-  --primary: #5433cb;
+  --primary: #45EBFD;
   --primary-alt: #4e138a;
   --grey: #64748b;
   --dark: #37415176;
@@ -57,14 +58,14 @@ const chain = useChainStore();
 
 }
 
-body {
+// body {
 
-  background: url("../Trianglify.png") center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+//   background: url("../Trianglify.png") center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
 
 button {
   cursor: pointer;

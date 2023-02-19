@@ -8,6 +8,7 @@ import { useUIStore } from "@/stories/uiStore";
 import { useWalletStore } from "@/stories/walletStore";
 import { formatBigNumber, getNetworkType, shortenString } from "@/utils";
 
+
 const defaultStore = useUIStore();
 const chain = useChainStore();
 const wallet = useWalletStore();
@@ -23,7 +24,7 @@ const ergBalance = computed(() => {
 <template>
   <div
     class="sticky top-0 z-30 flex h-16 w-full justify-center bg-base-300 bg-[#37415176] transition-all duration-100 text-white shadow-sm">
-    <div class="navbar w-full px-4 flex">
+    <div class="navbar w-full px-4 pt-4 flex">
       <img src="/Lithos_NoText.svg" width="40" height="40" class="animate-bounce" />
       <div class="flex-1 gap-2">
         <router-link to="/" class="btn btn-ghost normal-case text-xl gap-2">
