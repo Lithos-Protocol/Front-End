@@ -40,10 +40,23 @@
             </router-link>
             <router-link to="/twitter" class="button">
                 <span class="material-icons">
-                <TwitterIcon />
+                    <TwitterIcon />
                 </span>
                 <span class="text">Twitter</span>
             </router-link>
+            <router-link to="/telegram" class="button">
+                <span class="material-icons">
+                    <LaTelegramPlane />
+                </span>
+                <span class="text">Telegram</span>
+            </router-link>
+            <router-link to="/youtube" class="button">
+                <span class="material-icons">
+                    <YoutubeIcon />
+                </span>
+                <span class="text">Videos</span>
+            </router-link>
+
         </div>
 
         <div class="flex"></div>
@@ -57,7 +70,8 @@
 <script setup>
 import { ref } from 'vue'
 import logoURL from '../../src/Lithos_MARK3.svg'
-import { ChevronsRightIcon, GithubIcon, HomeIcon, MonitorIcon, TwitterIcon, UsersIcon } from '@zhuowenli/vue-feather-icons';
+import { ChevronsRightIcon, GithubIcon, HomeIcon, MonitorIcon, TwitterIcon, UsersIcon, YoutubeIcon } from '@zhuowenli/vue-feather-icons';
+import LaTelegramPlane from './LaTelegramPlane.vue';
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
@@ -115,6 +129,8 @@ aside {
                 color: var(--light);
                 transition: 0.2s ease-out;
             }
+
+
 
             &:hover {
                 .material-icons {
