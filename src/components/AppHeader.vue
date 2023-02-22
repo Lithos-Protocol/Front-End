@@ -41,7 +41,7 @@ const ergBalance = computed(() => {
             <router-link to="/dashboard" active-class="active-item">Dashboard</router-link>
           </li>
         </ul>
-        <div v-if="chain.tvl?.gt(0)">TVL: ${{ formatBigNumber(chain.tvl, 2) }}</div>
+        <!-- <div v-if="chain.tvl?.gt(0)">TVL: ${{ formatBigNumber(chain.tvl, 2) }}</div> -->
       </div>
 
     

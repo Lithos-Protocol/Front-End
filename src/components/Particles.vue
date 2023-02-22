@@ -39,7 +39,7 @@ export default {
                     },
                     modes: {
                         push: {
-                            quantity: 3, // number of particles to add on click
+                            quantity: 1, // number of particles to add on click
                         },
                         repulse: {
                             distance: 200, // distance of the particles from the cursor
@@ -50,6 +50,7 @@ export default {
                     links: {
                         distance: 200, // maximum distance for linking the particles
                         enable: true, // enabling this will make the particles linked together
+                        color: "#45EBFD",
                     },
                     move: {
                         enable: true, // enabling this will make particles move in the canvas
@@ -58,6 +59,7 @@ export default {
                     opacity: {
                         value: { min: 0.3, max: 0.7 }, // using a different opacity, to have some semitransparent effects
                     },
+                    color: "#45EBFD",
                     size: {
                         value: { min: 1, max: 3 }, // let's randomize the particles size a bit
                     },

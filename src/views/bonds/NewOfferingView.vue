@@ -88,18 +88,18 @@ const rules = {
   collateral: {
     required: helpers.withMessage("At least one asset should be added as collateral.", required)
   },
-  term: {
-    value: {
-      required,
-      minValue: minValue("1")
-    },
-    interval: {
-      required
-    }
-  },
-  interest: {
-    required
-  }
+  // term: {
+  //   value: {
+  //     required,
+  //     minValue: minValue("1")
+  //   },
+  //   interval: {
+  //     required
+  //   }
+  // },
+  // interest: {
+  //   required
+  // }                                                      //Will rename #of Blocks and Miner Fee a later date. 
 };
 
 const $v = useVuelidate(rules, state, { $lazy: true });
@@ -172,7 +172,7 @@ async function submit() {
     <div>
       <div class="form-control">
         <label class="label">
-          <span class="label-text big">Amount</span>
+          <span class="label-text big">Mining Fee Amount</span>
         </label>
         <div class="input-group">
           <cleave-input v-model="state.loan.amount" :readonly="loading" :options="{
@@ -190,20 +190,20 @@ async function submit() {
           <span class="label-text-alt text-error"> {{ $v.loan.$errors[0].$message }}</span>
         </label>
       </div>
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div class="form-control">
           <label class="label">
-            <span class="label-text"># of Blocks</span>
+            <span class="label-text"># of Blocks</span> -->
             <!-- <span v-if="blocks > 0n" class="label-text-alt opacity-70">{{ decimalize(blocks.toString(), { -->
             <!-- decimals: 0, -->
             <!-- thousandMark: "," -->
             <!-- }) }} blocks</span> -->
-          </label>
+          <!-- </label>
           <div class="input-group">
             <cleave-input v-model="state.term.value" :readonly="loading" :options="{
               blocks: [5],
               numericOnly: true
-            }" placeholder="0" class="input input-bordered w-full" @blur="$v.term.$touch()" />
+            }" placeholder="0" class="input input-bordered w-full" @blur="$v.term.$touch()" /> -->
             <!-- <select v-model="state.term.interval" class="select select-bordered border-l-0" @blur="$v.term.$touch()"> -->
             <!-- <option value="hours">Blocks</option> -->
             <!-- <option value="days">Amount</option> -->
@@ -211,12 +211,12 @@ async function submit() {
             <!-- </select> -->
 
         
-          </div>
+          <!-- </div>
           <label v-if="$v.term.$error" class="label !pt-1">
             <span class="label-text-alt text-error"> {{ $v.term.$errors[0].$message }}</span>
           </label>
-        </div>
-        <div class="form-control">
+        </div> -->
+        <!-- <div class="form-control">
           <label class="label">
             <span class="label-text">Mining Fee</span>
             <span v-if="interestAmount.gt(0)" class="label-text-alt opacity-70">{{
@@ -236,8 +236,8 @@ async function submit() {
           <label v-if="$v.interest.$error" class="label !pt-1">
             <span class="label-text-alt text-error"> {{ $v.interest.$errors[0].$message }}</span>
           </label>
-        </div>
-      </div>
+        </div> -->
+      <!-- </div> -->
     </div>
 
     <div>
