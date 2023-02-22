@@ -29,6 +29,7 @@ onMounted(async () => {
   loading.boxes = true;
   loading.metadata = true;
   const contracts = VERIFIED_ASSETS.map((a) => buildOrderContract(a.tokenId, "on-close"));
+
   const rawBoxes = await graphQLService.getBoxes({
     ergoTrees: contracts,
     spent: false
@@ -43,7 +44,7 @@ onMounted(async () => {
 
 <template>
   <div class="grid grid-cols-1 gap-8">
-   
+
     <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       <template v-if="loading.boxes">
         <bond-order-card v-for="n in 4" :key="n" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
