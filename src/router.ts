@@ -12,21 +12,21 @@ const routes: RouteRecordRaw[] = [
   { path: "/youtube/", name: "youtube", component: YouTube },
   {
     path: "/github",
-    component: Github,
+    component: TeamVue,
     beforeEnter(to, from, next) {
       window.location.href = "https://github.com/Lithos-Protocol";
     }
   },
   {
     path: "/twitter",
-    component: Github,
+    component: TeamVue,
     beforeEnter(to, from, next) {
       window.location.href = "https://twitter.com/LITHOSProtocol";
     }
   },
   {
     path: "/telegram",
-    component: Github,
+    component: TeamVue,
     beforeEnter(to, from, next) {
       window.location.href = "https://t.me/LITHOS_Protocol";
     }
