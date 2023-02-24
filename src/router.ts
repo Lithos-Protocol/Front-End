@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Dashboard from "./views/DashboardView.vue";
 import BondsMarketView from "./views/bonds/MiningOfferingView.vue";
 import TeamVue from "./components/Team.vue";
-import Github from "./components/GitHub.vue";
 import YouTube from "./components/YouTube.vue";
 
 const routes: RouteRecordRaw[] = [
