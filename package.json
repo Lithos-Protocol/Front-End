@@ -30,6 +30,7 @@
     "particles.vue3": "^2.9.3",
     "pinia": "^2.0.28",
     "pnpm": "^7.27.1",
+    "tsparticles-engine": "^2.9.3",
     "tsparticles-slim": "^2.9.3",
     "update": "^0.4.2",
     "vue": "^3.2.45",
