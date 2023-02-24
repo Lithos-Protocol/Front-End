@@ -1,11 +1,12 @@
-<template><!-- tsParticles Repository: https://github.com/matteobruni/tsparticles -->
+<template>
+    <!-- tsParticles Repository: https://github.com/matteobruni/tsparticles -->
     <!-- tsParticles Website: https://particles.js.org -->
     <Particles id="tsparticles" :options="options" :particlesInit="particlesInit" />
 </template>
   
 <script lang="ts">
 import type { Engine } from "tsparticles-engine";
-import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
+import { loadFull } from "tsparticles"; // loads tsparticles-slim
 //import { loadFull } from "tsparticles"; // loads tsparticles
 
 export default {
@@ -16,12 +17,12 @@ export default {
             options: {
                 background: {
                     // color: "#000", // this sets a background color for the canvas
-                     image:
-      "url('https://i.imgur.com/X0Svcyy.png')",
-                     size: "100% 100%",
-    repeat: "no-repeat"
+                    image:
+                        "url('https://i.imgur.com/X0Svcyy.png')",
+                    size: "100% 100%",
+                    repeat: "no-repeat"
                 },
-             
+
                 fullScreen: {
                     enable: true, // enabling this will make the canvas fill the entire screen, it's enabled by default
                     zIndex: -1, // this is the z-index value used when the fullScreen is enabled, it's 0 by default
@@ -69,7 +70,7 @@ export default {
     },
     methods: {
         async particlesInit(engine: Engine) {
-            await loadSlim(engine);
+            await loadFull(engine);
             // await loadFull(engine); // for this sample the slim version is enough, choose whatever you prefer, slim is smaller in size but doesn't have all the plugins and the mouse trail feature
         },
     },
