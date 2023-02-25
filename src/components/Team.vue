@@ -3,7 +3,7 @@
         <section class="mb-32 text-gray-800 text-center">
             <h2 class="text-3xl font-bold text-white mb-32">The LITHOS Team</h2>
 
-            <div class="grid gap-x-6 sm:gap-x-12 sm:grid-cols-4 ">
+            <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <div class="mb-24 md:mb-0 col-start-2">
                     <div class="rounded-xl shadow-lg h-full block  bg-[#37415176]">
                         <div class="flex justify-center">
