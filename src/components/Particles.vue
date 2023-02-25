@@ -6,8 +6,8 @@
   
 <script lang="ts">
 import type { Engine } from "tsparticles-engine";
-import { loadFull } from "tsparticles"; // loads tsparticles-slim
-//import { loadFull } from "tsparticles"; // loads tsparticles
+// import { loadslim } from "tsparticles"; // loads tsparticles-slim
+import { loadFull } from "tsparticles"; // loads tsparticles
 
 export default {
     data() {
@@ -19,7 +19,7 @@ export default {
                     // color: "#000", // this sets a background color for the canvas
                     image:
                         "url('https://i.imgur.com/X0Svcyy.png')",
-                    size: "100% 100%",
+                    size: "cover",
                     repeat: "no-repeat"
                 },
 
