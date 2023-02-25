@@ -157,7 +157,7 @@ async function loadData(
 </script>
 
 <template>
-  <div class="grid grid-cols-4 grid-rows-2">
+  <div class="grid grid-cols-1 grid-rows-2 w-36">
     <button class="btn bg-[#42446e] h-2 shadow text-white text-flex-col" :disabled="!wallet.connected || wallet.loading"
       @click="openNewLoanModal()">
       Create Mining Offering

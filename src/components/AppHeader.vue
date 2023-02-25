@@ -23,10 +23,10 @@ const ergBalance = computed(() => {
 
 <template>
   <div
-    class="sticky top-0 z-30 flex h-16 w-full justify-center bg-base-300 bg-[#37415176] transition-all duration-100 text-white shadow-sm">
+    class="sticky top-0 z-30 flex h-36 w-full justify-center bg-base-300 bg-[#37415176] transition-all duration-100 text-white shadow-sm">
     <div class="navbar w-full px-4 pt-4 flex">
       <img src="/Lithos_NoText.svg" width="40" height="40" class="animate-bounce" />
-      <div class="flex-1 gap-2">
+      <div class="grid gap-2 grid-cols-4 xl:grid-cols-8">
         <router-link to="/" class="btn btn-ghost normal-case text-xl gap-2">
 
           <div>LITHOS Protocol</div>
@@ -42,13 +42,13 @@ const ergBalance = computed(() => {
           </li>
         </ul>
         <!-- <div v-if="chain.tvl?.gt(0)">TVL: ${{ formatBigNumber(chain.tvl, 2) }}</div> -->
-      </div>
+     
 
-    
+    <div></div>
 
    
      
-        <div class=" gap-2">
+        <div class=" gap-2 col-start-6 col-span-2">
         <ul class="menu menu-horizontal px-1 gap-2">
           <li class="hidden md:block">
             <a class="btn btn-ghost gap-1 bg-base-100 hover:bg-base-100 hover:bg-opacity-50 bg-opacity-50 no-animation h-2"
@@ -93,5 +93,6 @@ const ergBalance = computed(() => {
       </div>
     </div>
   </div>
+</div>
 </template>
 
