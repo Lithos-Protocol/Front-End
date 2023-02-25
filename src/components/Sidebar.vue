@@ -95,7 +95,7 @@ aside {
 
     width: calc(2rem + 32px);
     overflow: hidden;
-    min-height: 100vh;
+  
     height: 100%;
     padding: 1rem;
 
