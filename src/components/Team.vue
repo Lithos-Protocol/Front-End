@@ -57,7 +57,7 @@
                             <h5 class="text-lg text-white font-bold mb-4">@ArOhBe</h5>
                             <p class="mb-6 text-white">UI/UX Hack</p>
                             <ul class="list-inside flex mx-auto justify-center">
-                                <a href="#!" class="px-2">
+                                <a href="https://github.com/ArohbeK" class="px-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"
                                         class="w-4 h-4 text-[#45EBFD]">
                                         <path fill="currentColor"
