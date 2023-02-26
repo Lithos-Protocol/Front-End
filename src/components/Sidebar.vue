@@ -91,7 +91,7 @@ aside {
     flex-direction: column;
 
 
- 
+
     width: calc(2rem + 32px);
     overflow: hidden;
     min-height: 100vh;
@@ -124,7 +124,7 @@ aside {
             transition: 0.2s ease-in-out;
 
             .material-icons {
-                font-size: 2rem;
+                font-size: 3rem;
                 color: var(--light);
                 transition: 0.2s ease-out;
             }
