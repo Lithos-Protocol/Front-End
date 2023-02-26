@@ -38,12 +38,12 @@ const ratio = computed(() => {
     return undefined;
   }
 
-  const loan = order.value.loan.amount.times(chain.priceRates[order.value.loan.tokenId]?.fiat || 0);
+  const blockreward = 43 
   const collateral = order.value.collateral.reduce((acc, val) => {
-    return acc.plus(val.amount.times(chain.priceRates[val.tokenId]?.fiat || 0));
+    return acc.plus(val.amount);
   }, BigNumber(0));
 
-  return collateral.div(loan).times(100);
+  return collateral.div(blockreward).times(100);
 });
 
 function openModal() {
@@ -69,8 +69,8 @@ async function cancelOrder() {
 <template>
   <div class="stats flex flex-col bg-[#37415176] text-white stats-vertical shadow" :class="{ skeleton: loadingBox }">
     <div class="stat">
-      <div class="stat-title skeleton-placeholder">
-        {{ order?.term.value }} {{ order?.term.interval }} 
+      <div class="stat-title">Fees
+  
       </div>
       <div class="stat-value text-success flex items-center gap-1">
         <div class="flex-grow">
@@ -116,21 +116,11 @@ async function cancelOrder() {
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="flex-grow opacity-0"></div>
 
-    <div class="stat">
-      <div class="stat-title">Fees</div>
-      <div class="flex gap-2">
-        <div class="stat-value skeleton-placeholder flex-grow">{{ order?.interest.percent }}%</div>
-        <asset-row hide-price mode="amount-then-ticker" :asset="order?.interest" name-class="text-xs" class="text-right"
-          root-class="items-baseline" />
-      </div>
-      <div class="stat-desc skeleton-placeholder">
-        {{ formatBigNumber(order?.interest.apr, 3) }}% APR
-      </div>
-      <div class="stat-actions text-center">
+
+
+       <div class="stat-actions text-center">
         <button v-if="order?.cancellable" class="btn btn-sm btn-center btn-primary" :class="{ loading: cancelling }"
           :disabled="!wallet.connected || loadingBox" @click="cancelOrder()">
           Cancel Offering

@@ -91,10 +91,10 @@ async function loadOpenOrders(tab: Tab) {
       args: {
         ergoTrees: VERIFIED_ASSETS.map((a) => buildOrderContract(a.tokenId, "on-close")),
         spent: false,
-        registers: { R4: pk }
+        registers: { R5: pk }
       }
     })),
-    (pk) => (box) => isDefined(box.additionalRegisters.R4) && box.additionalRegisters.R4 === pk
+    (pk) => (box) => isDefined(box.additionalRegisters.R5) && box.additionalRegisters.R5 === pk
   );
 }
 
@@ -157,15 +157,15 @@ async function loadData(
 </script>
 
 <template>
-  <div class="grid grid-cols-1 grid-rows-2 w-36">
+  <div class="grid grid-cols-1 grid-rows-3 w-48">
     <button class="btn bg-[#42446e] h-2 shadow text-white text-flex-col" :disabled="!wallet.connected || wallet.loading"
       @click="openNewLoanModal()">
       Create Mining Offering
     </button>
   </div>
   <div></div>
-  <div class="grid grid-cols-4 grid-rows-1 gap-2 justify-end text-flex-col">
-    <div class="tabs tabs-boxed max-w-max col-start-2 col-span-4 ">
+  <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center text-justify-center text-flex-col">
+    <div class="tabs tabs-boxed max-w-max col-span-4 ">
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'orders' }" @click="selectedTab = 'orders'">Open
         Mining Offerings</a>
       <a class="tab text-md" :class="{ 'tab-active': selectedTab === 'loans' }" @click="selectedTab = 'loans'">Active
@@ -175,7 +175,7 @@ async function loadData(
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-8 md:gap-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+  <div class="grid grid-cols-1 gap-8 md:gap-12 mt-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <template v-if="selectedTab === 'orders'">
       <bond-order-card v-if="loading.boxes" :loading-box="loading.boxes" :loading-metadata="loading.metadata" />
       <bond-order-card v-for="box in boxes" v-else :key="box.boxId" :box="box" :loading-box="loading.boxes"
@@ -188,8 +188,8 @@ async function loadData(
     </template>
   </div>
 
-  <div v-if="!loading.boxes && isEmpty(boxes)" class="text-3xl text-center w-full col-start-1 col-span-3">
-    <div class="opacity-90">No Active Offerings...</div>
+  <div v-if="!loading.boxes && isEmpty(boxes)" class="text-3xl text-center w-full col-start-1 row-start-3 mt-8 col-span-3">
+    <div class="mt-8 opacity-90">No Active Offerings...</div>
 
   </div>
 </template>

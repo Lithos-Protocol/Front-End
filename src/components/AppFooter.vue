@@ -42,6 +42,6 @@ const store = useUIStore();
         <span class="footer-title">KYA</span>
         <a class="link link-hover" @click="openKYAModal">Know Your Assumptions</a>
       </div> -->
-    <img src="/Lithos_MARK3.svg" width="100" height="100" />
+    <img src="/Lithos_MARK3.svg" width="65" height="65" />
   </footer>
 </template>

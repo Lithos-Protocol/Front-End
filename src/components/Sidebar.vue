@@ -90,13 +90,11 @@ aside {
     display: flex;
     flex-direction: column;
 
-    background-color: var(--dark);
-    color: var(--light);
 
+ 
     width: calc(2rem + 32px);
     overflow: hidden;
-  
-    height: 100%;
+    min-height: 100vh;
     padding: 1rem;
 
     transition: 0.2s ease-in-out;
@@ -115,7 +113,7 @@ aside {
 
     .menu-toggle-wrap {
         display: flex;
-        margin-top: 2rem;
+        margin-top: .5rem;
         margin-bottom: 1rem;
 
         position: relative;
@@ -167,7 +165,7 @@ aside {
             padding: 0.5rem 1rem;
 
             .material-icons {
-                font-size: 2rem;
+                font-size: 3rem;
                 color: var(--light);
                 transition: 0.2s ease-in-out;
             }

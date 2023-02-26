@@ -47,6 +47,7 @@ const chain = useChainStore();
   --dark-alt: #334155;
   --light: #f1f5f9;
   --sidebar-width: 150px;
+  --sidebar-height: 100%;
 
 }
 
@@ -77,7 +78,7 @@ button {
 
 #sidebar {
 
-  position: static;
+  position: fixed;
 }
 
 .app {

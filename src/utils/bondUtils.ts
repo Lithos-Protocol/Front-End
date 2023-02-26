@@ -29,12 +29,12 @@ export function parseOpenOrderBox(
     });
   }
 
-  const interestValue = new BigNumber(parseOr(box.additionalRegisters.R6, "0")).minus(
-    parseOr(box.additionalRegisters.R5, "0")
+  const interestValue = new BigNumber(parseOr(box.additionalRegisters.R4, "0")).minus(
+    parseOr(box.additionalRegisters.R4, "0")
   );
 
   const interest = interestValue
-    .dividedBy(parseOr(box.additionalRegisters.R5, "0"))
+    .dividedBy(parseOr(box.additionalRegisters.R4, "0"))
     .multipliedBy(100)
     .decimalPlaces(3);
 
@@ -53,7 +53,7 @@ export function parseOpenOrderBox(
     loan: {
       tokenId: tokenId,
       amount: decimalizeBigNumber(
-        BigNumber(parseOr(box.additionalRegisters.R5, "0")),
+        BigNumber(parseOr(box.additionalRegisters.R4, "0")),
         metadata[tokenId].decimals
       ),
       metadata: metadata[tokenId]
@@ -92,8 +92,8 @@ export function parseBondBox(
     });
   }
 
-  const borrower = isDefined(box.additionalRegisters.R5)
-    ? ErgoAddress.fromPublicKey(box.additionalRegisters.R5.substring(4)).encode(getNetworkType())
+  const borrower = isDefined(box.additionalRegisters.R4)
+    ? ErgoAddress.fromPublicKey(box.additionalRegisters.R4.substring(4)).encode(getNetworkType())
     : undefined;
 
   const lender = isDefined(box.additionalRegisters.R8)
@@ -107,7 +107,7 @@ export function parseBondBox(
     repayment: {
       tokenId: tokenId,
       amount: decimalizeBigNumber(
-        BigNumber(parseOr(box.additionalRegisters.R6, "0")),
+        BigNumber(parseOr(box.additionalRegisters.R4, "0")),
         metadata[tokenId].decimals
       ),
       metadata: metadata[tokenId]

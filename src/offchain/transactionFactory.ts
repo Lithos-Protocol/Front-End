@@ -41,7 +41,7 @@ export class TransactionFactory {
     const { chain, changeAddress, inputs, wallet } = await this._getTxContext();
 
     const implementor = ErgoAddress.fromBase58(
-      "9i3g6d958MpZAqWn9hrTHcqbBiY5VPYBBY6vRDszZn4koqnahin"
+      ""
     );
 
     const unsignedTx = new TransactionBuilder(chain.height)
