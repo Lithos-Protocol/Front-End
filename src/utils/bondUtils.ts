@@ -4,6 +4,7 @@ import BigNumber from "bignumber.js";
 import { ERG_DECIMALS, ERG_TOKEN_ID } from "@/constants";
 import { ASSET_ICONS } from "@/maps/assetIcons";
 import {
+  COLLATERAL_CONTRACT,
   extractTokenIdFromBondContract,
   extractTokenIdFromOrderContract
 } from "@/offchain/plugins";
@@ -43,8 +44,8 @@ export function parseOpenOrderBox(
     .multipliedBy(365)
     .decimalPlaces(3);
 
-  const borrower = isDefined(box.additionalRegisters.R4)
-    ? ErgoAddress.fromPublicKey(box.additionalRegisters.R4.substring(4)).encode(getNetworkType())
+  const borrower = isDefined(box.additionalRegisters.R5)
+    ? ErgoAddress.fromPublicKey(box.additionalRegisters.R5.substring(4)).encode(getNetworkType())
     : undefined;
 
   const tokenId = extractTokenIdFromOrderContract(box.ergoTree);
