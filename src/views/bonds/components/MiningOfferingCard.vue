@@ -85,7 +85,7 @@ async function cancelOrder() {
     <div class="stat">
       <div class="h-fit flex justify-between items-center">
         <span class="stat-title">Collateral</span>
-        <sig-tooltip v-if="ratio" tip="Collateral/Loan ratio" class="tooltip-left">
+        <sig-tooltip v-if="ratio" tip="Collateral/Block Ratio" class="tooltip-left">
           <span :class="{
             'badge-error': ratio.lt(100),
             'badge-warning': ratio.lt(150),
